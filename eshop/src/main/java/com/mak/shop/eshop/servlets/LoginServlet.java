@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.mak.shop.eshop.entity.UserDetails;
 import com.mak.shop.eshop.service.LoginService;
+import com.mak.shop.serverusers.entity.AdminUsers;
 
 /**
  * Servlet implementation class LoginServlet
@@ -41,10 +44,14 @@ public class LoginServlet extends HttpServlet {
 			boolean result = loginService.authenticateUser(email, passWord);
 			if (result) {
 				
+				UserDetails tempUser = loginService.getUserDetails();
 				loginSession.setAttribute("log_email", email);
 				loginSession.setAttribute("log_pass_word", passWord);
-				loginSession.setAttribute("log_user_name", loginService.getUserName());
-				loginSession.setAttribute("temp_log_user_name", loginService.getUserName());
+				loginSession.setAttribute("log_user_name", tempUser.getUserName());
+				loginSession.setAttribute("log_user_phone", tempUser.getUserPhone());
+				loginSession.setAttribute("log_user_pic", tempUser.getUserPic());
+				loginSession.setAttribute("log_user_address", tempUser.getUserAddressID());
+				loginSession.setAttribute("temp_log_user_name", tempUser.getUserName());
 				
 				response.sendRedirect("index.jsp");
 

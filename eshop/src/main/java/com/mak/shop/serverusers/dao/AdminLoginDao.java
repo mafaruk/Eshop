@@ -13,10 +13,20 @@ public class AdminLoginDao {
 
 	Session hiberSession; 
 	Transaction transaction;
-	private String userName;
+	
+	private AdminUsers adminUsers;
+
+	public AdminUsers getAdminUsers() {
+		return adminUsers;
+	}
+
+	public void setAdminUsers(AdminUsers adminUsers) {
+		this.adminUsers = adminUsers;
+	}
 
 	public AdminLoginDao() {
 		hiberSession = SessionFactoryProvider.getSession();
+		
 		
 	}
 
@@ -29,10 +39,11 @@ public class AdminLoginDao {
 		query.setParameter("pass_word", Password);
 		@SuppressWarnings("unchecked")
 		List<AdminUsers> adminUserDetails = query.list();
+		
 		if ((adminUserDetails.size() == 1) && (adminUserDetails.get(0).getUserEmail().equals(email))
 				&& (adminUserDetails.get(0).getUserPassword().equals(Password))) {
 			isAuthenticate = true;
-			this.setUserName(adminUserDetails.get(0).getUserName());
+			this.setAdminUsers(adminUserDetails.get(0));
 		} else {
 
 			isAuthenticate = false;
@@ -49,10 +60,5 @@ public class AdminLoginDao {
 		this.transaction.commit();
 	}
 	
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+	
 }

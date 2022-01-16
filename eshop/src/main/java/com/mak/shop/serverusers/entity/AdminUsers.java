@@ -30,7 +30,7 @@ public class AdminUsers {
 		this.userPassword = userPassword;
 		this.userPhone = userPhone;
 		this.userPic = userPic;
-		this.setUserPrivilages(userPrivilages);
+		this.userPrivilages = userPrivilages;
 	}
 	
 

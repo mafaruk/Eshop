@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.mak.shop.serverusers.entity.AdminUsers;
 import com.mak.shop.serverusers.service.AdminLoginService;
 
 /**
@@ -38,12 +40,14 @@ public class AdminLoginServlet extends HttpServlet {
 			String passWord = request.getParameter("pass_word");
 			boolean result = adminLoginService.authenticateUser(email, passWord);
 			if (result) {
-				
-				loginSession.setAttribute("log_email", email);
-				loginSession.setAttribute("log_pass_word", passWord);
-				String tempUserName = adminLoginService.getUserName();
-				loginSession.setAttribute("log_user_name", tempUserName);
-				loginSession.setAttribute("temp_log_user_name", tempUserName);
+				AdminUsers tempUser = adminLoginService.getAdminUsers();
+				loginSession.setAttribute("admin_log_email", email);
+				loginSession.setAttribute("admin_log_pass_word", passWord);
+				loginSession.setAttribute("admin_log_user_name", tempUser.getUserName());
+				loginSession.setAttribute("admin_log_user_phone", tempUser.getUserPhone());
+				loginSession.setAttribute("admin_log_user_pic", tempUser.getUserPic());
+				loginSession.setAttribute("admin_log_user_priv", tempUser.getUserPrivilages());
+				loginSession.setAttribute("temp_log_user_name", tempUser.getUserName());
 				response.sendRedirect("adminIndex.jsp");
 
 			} else {

@@ -12,14 +12,14 @@
 </head>
 
 <body>
-	<%@include file="resources/component/navbar.jsp"%>
+	<%@include file="resources/component/adminNavbar.jsp"%>
 	<%@include file="resources/component/alertMesseges.jsp"%>
 	<div class="container-fluid">
 		<div class="row my-3">
 			<div class="col-md-6 offset-md-3">
 				<div class="card px-2">
 					<div class="card-body">
-						<h5 class="card-title text-center">Admin Sign Up!</h5>
+						<h5 class="card-title text-center">Admin Sign Up</h5>
 						<form name="regform" action="AdminRegisterServlet"
 							onsubmit="return validateForm()" method="post">
 							<div class="form-group">
@@ -77,19 +77,19 @@
 									<h5 class="card-subtitle mb-2 text-muted">Privileges</h5>
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" type="radio"
-											name="exampleRadios" id="exampleRadios1" value="All"
+											name="Privileges" id="Privileges1" value="All"
 											> <label class="form-check-label"
-											for="exampleRadios1">All</label>
+											for="Privileges1">All</label>
 									</div>
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" type="radio"
-											name="exampleRadios" id="exampleRadios2" value="Read" checked>
-										<label class="form-check-label" for="exampleRadios2">Read-Only</label>
+											name="Privileges" id="Privileges2" value="Read" checked>
+										<label class="form-check-label" for="Privileges2">Read-Only</label>
 									</div>
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" type="radio"
-											name="exampleRadios" id="exampleRadios3" value="Write"> <label class="form-check-label"
-											for="exampleRadios3">Write-Only</label>
+											name="Privileges" id="Privileges3" value="Write"> <label class="form-check-label"
+											for="Privileges3">Write-Only</label>
 									</div>
 								</div>
 

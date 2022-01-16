@@ -54,7 +54,7 @@
 												<label for="name" class="input-group-text"
 													id="inputGroupPrepend">+91</label>
 											</div>
-										<input type="tel" class="form-control" id="contact" name="contact" pattern="([0-9]).{9}" title="please enter number only" size="10" required>
+										<input type="tel" class="form-control" id="contact" name="contact" pattern="([0-9]).{9}" title="please enter number only" size="10" placeholder="Enter Contact Number" required>
 											</div>
 									</div>
 									<div class="card ">

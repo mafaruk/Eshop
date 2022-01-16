@@ -1,6 +1,7 @@
 package com.mak.shop.serverusers.service;
 
 import com.mak.shop.serverusers.dao.AdminLoginDao;
+import com.mak.shop.serverusers.entity.AdminUsers;
 
 public class AdminLoginService {
 	
@@ -12,8 +13,8 @@ public class AdminLoginService {
 
 	}
 
-	public String getUserName() {
-		return this.adminLoginDao.getUserName();
+	public AdminUsers getAdminUsers() {
+		return this.adminLoginDao.getAdminUsers();
 	}
 
 	public AdminLoginService() {

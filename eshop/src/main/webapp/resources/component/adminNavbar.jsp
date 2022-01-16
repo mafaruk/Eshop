@@ -37,7 +37,7 @@
 			<%
 			HttpSession loginSession = request.getSession(false);
 			String name = null;
-			name = (String) loginSession.getAttribute("log_user_name");
+			name = (String) loginSession.getAttribute("admin_log_user_name");
 			if (loginSession != null && name !=null ) {
 			%>
 				
@@ -46,11 +46,9 @@
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Log Out</a> 
 						<a class="dropdown-item" href="#">Profile</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">My Orders</a>
 					</div>
 				</li>
-				<li class="nav-item pl-2"><a class="nav-link " href="">Cart</a></li>
+				
 			<%
 			} else {
 				%>

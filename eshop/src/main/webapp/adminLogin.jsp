@@ -8,7 +8,7 @@
 <%@include file="resources/component/common_css_js.jsp" %>
 </head>
 <body>
-<%@include file="resources/component/navbar.jsp" %>
+<%@include file="resources/component/adminNavbar.jsp" %>
 <div class="container-fluid">
 
 				<div class="row my-3">

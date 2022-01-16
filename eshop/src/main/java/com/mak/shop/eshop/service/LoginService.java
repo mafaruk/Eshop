@@ -1,6 +1,7 @@
 package com.mak.shop.eshop.service;
 
 import com.mak.shop.eshop.dao.LoginDao;
+import com.mak.shop.eshop.entity.UserDetails;
 
 public class LoginService {
 
@@ -17,7 +18,7 @@ public class LoginService {
 		
 	} 
 	
-	public String getUserName() {
-		return this.loginDao.getUserName();
+	public UserDetails getUserDetails() {
+		return this.loginDao.getUserDetails();
 	}
 }

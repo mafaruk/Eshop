@@ -13,13 +13,14 @@ public class LoginDao {
 
 	Session hiberSession; 
 	Transaction transaction;
-	private String userName;
+	private UserDetails userDetails;
 
-	public String getUserName() {
-		return userName;
+	
+	public UserDetails getUserDetails() {
+		return userDetails;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserDetails(UserDetails userDetails) {
+		this.userDetails = userDetails;
 	}
 	public LoginDao() {
 		hiberSession = SessionFactoryProvider.getSession();
@@ -41,7 +42,7 @@ public class LoginDao {
 		if ((userDetails.size() == 1) && (userDetails.get(0).getUserEmail().equals(email))
 				&& (userDetails.get(0).getUserPassword().equals(Password))) {
 			isAuthenticate = true;
-			this.setUserName(userDetails.get(0).getUserName());
+			this.setUserDetails(userDetails.get(0));
 		} else {
 
 			isAuthenticate = false;

@@ -17,5 +17,6 @@
 		<mapping class="com.mak.shop.eshop.entity.Product"/>
 		<mapping class="com.mak.shop.eshop.entity.Category"/>
 		<mapping class="com.mak.shop.eshop.entity.SubCategory"/>
+		<mapping class="com.mak.shop.serverusers.entity.AdminUsers"/>
 	</session-factory>
 </hibernate-configuration>
