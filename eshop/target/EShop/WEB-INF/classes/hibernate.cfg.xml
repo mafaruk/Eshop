@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=eshop</property>
+		<property name="hibernate.connection.username">sa</property>
+		<property name="hibernate.connection.password">ok</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<mapping class="com.mak.shop.eshop.entity.UserDetails"/>
+		<mapping class="com.mak.shop.eshop.entity.Address"/>
+		<mapping class="com.mak.shop.eshop.entity.Product"/>
+		<mapping class="com.mak.shop.eshop.entity.Category"/>
+		<mapping class="com.mak.shop.eshop.entity.SubCategory"/>
+	</session-factory>
+</hibernate-configuration>

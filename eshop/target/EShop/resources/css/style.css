@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+.custom-bg{
+	
+	background: #b40006!important;
+}
+.btn{
+	
+	background:#ef0000;/*  */
+	color: white;
+}
+.btn:hover {
+  background:#ff695a;
+}
