@@ -41,12 +41,7 @@ public class AdminLoginServlet extends HttpServlet {
 			boolean result = adminLoginService.authenticateUser(email, passWord);
 			if (result) {
 				AdminUsers tempUser = adminLoginService.getAdminUsers();
-				loginSession.setAttribute("admin_log_email", email);
-				loginSession.setAttribute("admin_log_pass_word", passWord);
-				loginSession.setAttribute("admin_log_user_name", tempUser.getUserName());
-				loginSession.setAttribute("admin_log_user_phone", tempUser.getUserPhone());
-				loginSession.setAttribute("admin_log_user_pic", tempUser.getUserPic());
-				loginSession.setAttribute("admin_log_user_priv", tempUser.getUserPrivilages());
+				loginSession.setAttribute("admin_log_user", tempUser);
 				loginSession.setAttribute("temp_log_user_name", tempUser.getUserName());
 				response.sendRedirect("adminIndex.jsp");
 

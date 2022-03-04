@@ -45,14 +45,8 @@ public class LoginServlet extends HttpServlet {
 			if (result) {
 				
 				UserDetails tempUser = loginService.getUserDetails();
-				loginSession.setAttribute("log_email", email);
-				loginSession.setAttribute("log_pass_word", passWord);
-				loginSession.setAttribute("log_user_name", tempUser.getUserName());
-				loginSession.setAttribute("log_user_phone", tempUser.getUserPhone());
-				loginSession.setAttribute("log_user_pic", tempUser.getUserPic());
-				loginSession.setAttribute("log_user_address", tempUser.getUserAddressID());
+				loginSession.setAttribute("log_email", tempUser);
 				loginSession.setAttribute("temp_log_user_name", tempUser.getUserName());
-				
 				response.sendRedirect("index.jsp");
 
 			} else {
