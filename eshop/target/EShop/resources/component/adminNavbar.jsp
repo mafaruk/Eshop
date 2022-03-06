@@ -37,7 +37,7 @@
 			<%
 			HttpSession loginSession = request.getSession(false);
 			String name = null;
-			name = (String) loginSession.getAttribute("log_user_name");
+			name = (String) loginSession.getAttribute("admin_log_user_name");
 			if (loginSession != null && name !=null ) {
 			%>
 				

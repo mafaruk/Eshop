@@ -59,9 +59,9 @@
 									</div>
 									<div class="card ">
 										<div class="card-body">
-											<h5 class="card-subtitle mb-2 text-muted">Address</h5>
+											<h5 class="card-subtitle mb-2 text-muted" for="house">Address</h5>
 											<div class="form-group">
-												<label for="house">Line1</label>
+												<label ></label>
 												<textarea class="form-control" id="house" name="line1" placeholder="Enter Address"
 													required></textarea>
 											</div>
